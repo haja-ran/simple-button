@@ -1,0 +1,24 @@
+{
+  "name": "simple-button",
+  "version": "0.0.0",
+  "main": "dist/my-button.es.js",
+  "exports": {
+    ".": "./dist/my-button.es.js"
+  },
+  "types": "types/my-button.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build"
+  },
+  "dependencies": {
+    "lit-element": "^2.4.0"
+  },
+  "devDependencies": {
+    "vite": "^2.3.8",
+    "typescript": "^4.3.2"
+  }
+}
