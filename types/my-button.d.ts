@@ -1,4 +1,14 @@
 import { LitElement } from 'lit-element';
+export declare enum ButtonColorEnum {
+    DEFAULT = "default",
+    SUCCESS = "success",
+    DANGER = "danger"
+}
+export declare enum ButtonSizeEnum {
+    SMALL = "small",
+    MEDIUM = "medium",
+    LARGE = "large"
+}
 /**
  * An example element.
  *
@@ -13,7 +23,7 @@ export declare class MyButton extends LitElement {
     get sizeClass(): string;
     get colorClass(): string;
     get buttonClasses(): {
-        [x: string]: string;
+        [x: string]: ButtonColorEnum | ButtonSizeEnum;
     };
     render(): import("lit-element").TemplateResult;
 }

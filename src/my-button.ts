@@ -1,5 +1,18 @@
 import { LitElement, html, customElement, property, css } from 'lit-element'
 import { classMap } from 'lit-html/directives/class-map';
+
+export enum ButtonColorEnum {
+  DEFAULT = 'default',
+  SUCCESS= 'success',
+  DANGER = 'danger'
+}
+
+export enum ButtonSizeEnum {
+  SMALL = 'small',
+  MEDIUM= 'medium',
+  LARGE = 'large'
+}
+
 /**
  * An example element.
  *
@@ -7,7 +20,9 @@ import { classMap } from 'lit-html/directives/class-map';
  * @csspart button - The button
  */
 @customElement('my-button')
-export class MyButton extends LitElement {  
+
+export class MyButton extends LitElement { 
+
   static styles = css`
     :host .svg-icon {
       height: 1rem;
@@ -83,8 +98,8 @@ export class MyButton extends LitElement {
 
   get buttonClasses() {
     return {
-      [this.color as string]: this.color as string,
-      [this.size as string]: this.size as string,
+      [this.color as ButtonColorEnum]: this.color as ButtonColorEnum,
+      [this.size as ButtonSizeEnum]: this.size as ButtonSizeEnum,
     }
   }
 
