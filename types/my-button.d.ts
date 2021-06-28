@@ -10,11 +10,12 @@ export declare class MyButton extends LitElement {
     size: string;
     color: string;
     count: number;
-    render(): import("lit-element").TemplateResult;
-    private _onSizeChange;
-    private _onColorChange;
     get sizeClass(): string;
     get colorClass(): string;
+    get buttonClasses(): {
+        [x: string]: string;
+    };
+    render(): import("lit-element").TemplateResult;
 }
 declare global {
     interface HTMLElementTagNameMap {

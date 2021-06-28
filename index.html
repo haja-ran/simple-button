@@ -8,8 +8,42 @@
     <script type="module" src="/src/my-button.ts"></script>
   </head>
   <body>
-    <my-button>
+    <select id="select-size">
+      <option value="">Select size</option>
+      <option value="small">Small</option>
+      <option value="medium">Medium</option>
+      <option value="large">Large</option>
+    </select>
+
+    <select id="select-color">
+      <option value="">Select color</option>
+      <option value="default">Default</option>
+      <option value="success">Success</option>
+      <option value="danger">Danger</option>
+    </select>
+
+
+    <my-button
+      id="button"
+      size="small"
+      color="default">
       Button
     </my-button>
+
+    <script>
+      addEventListener('DOMContentLoaded', () => {
+        const button = document.querySelector('#button');
+        const selectSize = document.querySelector('#select-size');
+        const selectColor = document.querySelector('#select-color');
+
+        selectSize.addEventListener('change', event => {
+          button.setAttribute('size', event.target.value )
+        })
+
+        selectColor.addEventListener('change', event => {
+          button.setAttribute('color', event.target.value )
+        })
+      })
+    </script>
   </body>
 </html>
